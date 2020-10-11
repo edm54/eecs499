@@ -255,7 +255,7 @@ function [x_prime, y_prime, theta_prime] = sample_motion_model_velocity(u, state
     
     v_hat = v + sample_from_normal(alpha(1) * v^2 + alpha(2) * w^2);
     w_hat = w + sample_from_normal(alpha(3) * v^2 + alpha(4) * w^2);
-    if w ~= 0
+    if w_hat ~= 0
         r = v_hat/w_hat;
 
         d_theta = w_hat * t;
